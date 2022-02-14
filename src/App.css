@@ -1,38 +1,331 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --white-blue : #F9F7F7 ;
+    --light-blue : #DBE2EF;
+    --blue : #3f72af;
+    --dark-blue : #21325e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+html{
+    font-size: 62.5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+section{
+    padding: 5rem 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.backdrop{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 10;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 2rem 3rem;
+    width: 70rem;
+    z-index: 30;
+    box-shadow: 0 0 1rem var(--blue);
+    border-radius: 2rem;
+}
+
+.modal .close{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 4rem;
+    z-index: 10;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--dark-blue);
+}
+
+
+.btn{
+    padding: 1rem 3rem;
+    border: none;
+    outline: none;
+    color:var(--white-blue) ;
+    background: var(--blue);
+    border-radius: 2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+}
+
+.btn2{
+    padding: .4rem 2rem;
+    margin: 0 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn2.primary{
+    background: rgb(102, 102, 102);
+}
+.btn2.danger{
+    background: rgb(233, 54, 54);
+}
+
+h1{
+    font-size: 4.5rem;
+    letter-spacing: .2rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    background: var(--light-blue);
+    border-radius: 1rem;
+    margin-top: 3rem;
+    border-spacing: 0;
+   box-shadow: 0 0 .5rem rgba(0,0,0,.5);
+}
+
+
+table thead tr th{
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 2.4rem;
+    color: var(--dark-blue);
+}
+
+
+table tbody tr td{
+    border-top: .1rem solid var(--dark-blue);
+}
+
+table tbody tr td{
+    font-size: 1.6rem;
+    padding: 1.4rem;
+    color: var(--dark-blue);
+}
+
+table tfoot tr td{
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 1.4rem;
+    color: var(--dark-blue);
+}
+
+
+
+.logo svg{
+    font-size: 5rem;
+    color: var(--dark-blue);
+}
+
+.header
+{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    background: var(--light-blue);
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,0.3);
+}
+
+.navbar{
+    width: 100%;
+    padding: 1rem 5%;
+    background: var(--blue);
+}
+
+.navbar ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    list-style: none;
+}
+
+.navbar ul li {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.navbar ul li:hover,.navbar ul li.active{
+    border-bottom: 2px solid white;
+
+}
+
+
+.form-section .formBx{
+    background: var(--light-blue);
+    max-width: 60rem;
+    width: 90%;
+    padding: 2rem 5rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+
+
+.form-section .formBx input{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    background: #fff;
+    margin: 2rem 0;
+}
+
+.orders .content{
+    width: 90%;
+    max-width: 90rem;
+    background: #fff;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 .5rem rgba(0,0,0,.5)
+   
+}
+
+.orders .content .user-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.orders .content .user-info h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    
+}
+
+.orders .content .user-info h3 span{
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.create-order .form-container{
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 .3rem rgba(0,0,0,0.5);
+}
+
+.create-order .form-container .med-form,
+.create-order .form-container .contact-form .form-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+ .form-container input,select{
+    border: none;
+    border: .1rem solid #333;
+    border-radius: 1rem;
+    outline: none;
+    padding: .5rem 1rem;
+    background: #f3f3f3;
+    font-size: 1.6rem;
+    margin: 2rem 0 2rem 2rem;
+
+}
+
+.form-container label{
+   font-size: 1.8rem;
+   
+}
+ .form-container .contact-form {
+   text-align: center;
+   border-top: 1px solid rgb(177, 177, 177);
+}
+
+ .form-container .contact-form .btn{
+    margin-top: 3rem;
+ }
+
+ .modal-form{
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     align-items: center;
+ }
+
+ .modal-form .input-wrapper{
+     width: 250px;
+     margin: 20px 12px;
+ }
+
+.modal-form .input-wrapper input{
+    width: 100%;
+    margin: 0;
+}
+
+ .modal-form .input-wrapper:nth-child(n+3){
+    width: 25%;
+}
+
+@media(max-width : 700px){
+    html{
+        font-size: 50%;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .modal{
+        padding: 2rem 1rem;
+        width: 90%;
+    }
+    
+    .modal-form .input-wrapper {
+        width: 250px;
+        margin: 1.5rem;
+    }
+
+    .create-order .form-container .med-form, .create-order .form-container .contact-form .form-control {
+       
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-container .contact-form {
+        text-align: start;
+         margin-top: 4rem;
+    }
 }
